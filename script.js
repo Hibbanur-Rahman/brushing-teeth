@@ -79,6 +79,82 @@ pageImg.forEach((element)=>{
     })
 })
 
+
+//for the next button
+var next=document.querySelector('.next');
+next.addEventListener('click', ()=>{
+    var presentActiveSlide=0;
+    for(var i=0;i<another.length;i++){
+        console.log(typeof another[i].classList);
+        var listOfClass=another[i].classList;
+        var countElement=0;
+        listOfClass.forEach((element1)=>{
+            if(element1=='hide'){
+                countElement++;
+            }
+        })
+        if(countElement==0){
+            presentActiveSlide=i;
+            break;
+        }
+    }
+    switch(presentActiveSlide){
+        case 0:
+            another[0].classList.add('hide');
+            another[1].classList.remove('hide');
+            another[2].classList.add('hide');
+            break;
+        case 1:
+            another[0].classList.add('hide');
+            another[1].classList.add('hide');
+            another[2].classList.remove('hide');
+            break;
+        case 2:
+            another[0].classList.remove('hide');
+            another[1].classList.add('hide');
+            another[2].classList.add('hide');
+            break;
+    }
+    
+})
+
+//for the back button
+var back=document.querySelector('.back');
+back.addEventListener('click', ()=>{
+    var presentActiveSlide=0;
+    for(var i=0;i<another.length;i++){
+        console.log(typeof another[i].classList);
+        var listOfClass=another[i].classList;
+        var countElement=0;
+        listOfClass.forEach((element1)=>{
+            if(element1=='hide'){
+                countElement++;
+            }
+        })
+        if(countElement==0){
+            presentActiveSlide=i;
+            break;
+        }
+    }
+    switch(presentActiveSlide){
+        case 0:
+            another[0].classList.add('hide');
+            another[1].classList.add('hide');
+            another[2].classList.remove('hide');
+            break;
+        case 1:
+            another[0].classList.remove('hide');
+            another[1].classList.add('hide');
+            another[2].classList.add('hide');
+            break;
+        case 2:
+            another[0].classList.add('hide');
+            another[1].classList.remove('hide');
+            another[2].classList.add('hide');
+            break;
+    }
+    
+})
 //option generating
 var itemListing='';
 var images=[
